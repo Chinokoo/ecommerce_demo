@@ -9,6 +9,7 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //this is a bottom navigation bar implemented using google_nav_bar package
       child: GNav(
           color: Colors.grey,
           activeColor: Colors.grey.shade700,
@@ -17,10 +18,12 @@ class MyBottomNavBar extends StatelessWidget {
           tabBorderRadius: 16,
           onTabChange: (value) => onTabChange(value),
           tabs: const [
+            // nav button -  Shop button icon
             GButton(
               icon: Icons.home,
               text: " Shop",
             ),
+            //nav button - Search button icon
             GButton(icon: Icons.shopping_basket_rounded, text: " Cart"),
           ]),
     );

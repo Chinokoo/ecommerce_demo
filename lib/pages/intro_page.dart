@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:ecommerce_demo/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,67 +10,70 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //logo
-            Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Image.asset('lib/images/nikeLogo.png', height: 300)),
+      body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //logo
+                Image.asset("lib/images/nikeLogo.png", height: 300),
 
-            //title
-            const SizedBox(height: 20),
-            const Text(
-              "Just Do It",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 26,
-                  color: Colors.black),
-            ),
-
-            //subtitle
-            //title
-            const SizedBox(height: 20),
-            const Center(
-              child: Text(
-                "Brand new sneakers and custom kicks made with premium quality.",
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16,
-                  color: Colors.grey,
+                //sized box for the spacing in between
+                const SizedBox(
+                  height: 24,
                 ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const SizedBox(height: 20),
 
-            //shop now button
-            GestureDetector(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  )),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    borderRadius: BorderRadius.circular(12)),
-                padding: const EdgeInsets.all(25),
-                width: 300,
-                child: const Text(
-                  "Shop Now !",
+                //title
+                Text(
+                  "Just Do It",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+
+                //sized box for the spacing in between
+                const SizedBox(
+                  height: 24,
+                ),
+
+                // subtitle
+                Text(
+                  "Brand new Sneakers and Custom kicks made with Premium Quality Material Design",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey[700]),
                   textAlign: TextAlign.center,
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
+
+                const SizedBox(
+                  height: 24,
+                ),
+
+                //button
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePage())),
+                  child: Container(
+                    padding: EdgeInsets.all(25),
+                    decoration: BoxDecoration(
+                        color: Colors.grey[900],
+                        borderRadius: BorderRadius.circular(12)),
+                    width: 300,
+                    child: Text(
+                      "Shop Now",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )),
     );
   }
 }
