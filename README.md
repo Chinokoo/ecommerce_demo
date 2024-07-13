@@ -1,6 +1,6 @@
 # E-commerce Demo
 
-his is a Flutter project that demonstrates an e-commerce application with a shopping cart functionality.
+This is a Flutter project that demonstrates an e-commerce application with a shopping cart functionality.
 
  <img src="lib/images/Screenshots/Drawer.png" width="200">
 
